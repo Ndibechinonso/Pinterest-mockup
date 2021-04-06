@@ -1,6 +1,5 @@
 // Arrays of images, each array represents images to display on a slide
 
-
 let slide1 = document.querySelector(".slide1");
 let slide1arr = [
   "https://i.pinimg.com/236x/20/aa/e1/20aae1471f8c8165046ce9aa0a3baadd.jpg",
@@ -184,4 +183,16 @@ for (let i = 0; i < slide6Arr.length; i++) {
   card.append(pinsContainer);
   card.append(imgCard)
   document.querySelector(".slide6").append(card);
+}
+
+// fxn to make mini-navbar disappear on scroll down
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+var currentScrollPos = window.pageYOffset;
+if (prevScrollpos > currentScrollPos) {
+  document.getElementById("minion-navbar").style.bottom = "20px";
+} else {
+  document.getElementById("minion-navbar").style.bottom = "-100px";
+}
+prevScrollpos = currentScrollPos;
 }
